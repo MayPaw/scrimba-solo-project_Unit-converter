@@ -1,48 +1,46 @@
 <hmtl>
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@
-            400;600;900&display=swap" rel="stylesheet">
+            400;600;700&display=swap" rel="stylesheet">
         <link rel = "stylesheet" href = "index.css">
         <title>Unit Converter</title> 
     </head>
     <body>
 
-        <section class = "input">
+        <header>
             <h1>Metric/Imperial unit conversion</h1>
-            <input type = "number" min = "0" value = "0">
-        </section>
-
+            <input type = "number" min = "0" max = "1000000" value = "0">
+        </header>
 
         <section class = "results-container" >
-            <div class = "results">
-                <h4 class = "results-heading">length (meters/feet)</h4>
-
-                <p><span id = "length-metric-input-value">0</span> meters = 
+            <div class = "result">
+                <h4 class = "result-heading">length (meters/feet)</h4>
+                <p class = "result-left-col"><span id = "length-metric-input-value">0</span> meters = 
                     <span id = "length-imperial-result-value">0</span> feet</p>
 
-                <p><span id = "input-value">0</span> feet = 
+                <p class = "result-right-col"><span id = "input-value">0</span> feet = 
                     <span id = "length-metric-result-value">0</span> meters</p>
             </div>
 
-            <div class = "results">
-                <h4 class = "results-heading">volume (liters/gallons)</h4>
+            <div class = "result">
+                <h4 class = "result-heading">volume (liters/gallons)</h4>
 
-                <p><span id = "metric-input-value">0</span> liters = 
+                <p class = "result-left-col"><span id = "metric-input-value">0</span> liters = 
                     <span id = "imperial-result-value">0</span> gallons</p>
 
-                <p><span id = "imperial-input-value">0</span> gallons = 
+                <p class = "result-right-col"><span id = "imperial-input-value">0</span> gallons = 
                     <span id = "metric-result-value">0</span> liters</p>
             </div>
 
-            <div class = "results">
-                <h4 class = "results-heading">mass (kilograms/pounds)</h4>
+            <div class = "result">
+                <h4 class = "result-heading">mass (kilograms/pounds)</h4>
 
-                <p><span id = "metric-input-value">0</span> meters = 
+                <p class = "result-left-col"><span id = "metric-input-value">0</span> meters = 
                     <span id = "imperial-result-value">0</span> feet</p>
 
-                <p><span id = "imperial-input-value">0</span> feet = 
+                <p class = "result-right-col"><span id = "imperial-input-value">0</span> feet = 
                     <span id = "metric-result-value">0</span> meters</p>
             </div>
         </section>

@@ -10,3 +10,8 @@ The design of the app was followed with the one provided in the course, with sli
 
 * The app should include an input for user to change the converted number and automatically recalculate values as it changes
 * The values should be round up to 3 decimal places
+
+## Changes history and description
+
+1. Project setup - html file structuring, create index.css and index.js.
+2. Styling - add the layout, manage white space, colors and typography.
