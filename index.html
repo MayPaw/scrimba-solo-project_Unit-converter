@@ -1,5 +1,8 @@
 <hmtl>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@
@@ -11,37 +14,37 @@
 
         <header>
             <h1>Metric/Imperial unit conversion</h1>
-            <input type = "number" min = "0" max = "1000000" value = "0">
+            <input id = "input" type = "number" min = "0" max = "1000000" value = "0">
         </header>
 
         <section class = "results-container" >
             <div class = "result">
                 <h4 class = "result-heading">length (meters/feet)</h4>
-                <p class = "result-left-col"><span id = "length-metric-input-value">0</span> meters = 
-                    <span id = "length-imperial-result-value">0</span> feet</p>
+                <p class = "result-left-col"><span id = "meters-input-value">0</span> meters = 
+                    <span id = "meters-result-value">0</span> feet</p>
 
-                <p class = "result-right-col"><span id = "input-value">0</span> feet = 
-                    <span id = "length-metric-result-value">0</span> meters</p>
+                <p class = "result-right-col"><span id = "feet-input-value">0</span> feet = 
+                    <span id = "feet-result-value">0</span> meters</p>
             </div>
 
             <div class = "result">
                 <h4 class = "result-heading">volume (liters/gallons)</h4>
 
-                <p class = "result-left-col"><span id = "metric-input-value">0</span> liters = 
-                    <span id = "imperial-result-value">0</span> gallons</p>
+                <p class = "result-left-col"><span id = "liters-input-value">0</span> liters = 
+                    <span id = "gallons-result-value">0</span> gallons</p>
 
-                <p class = "result-right-col"><span id = "imperial-input-value">0</span> gallons = 
-                    <span id = "metric-result-value">0</span> liters</p>
+                <p class = "result-right-col"><span id = "gallons-input-value">0</span> gallons = 
+                    <span id = "liters-result-value">0</span> liters</p>
             </div>
 
             <div class = "result">
                 <h4 class = "result-heading">mass (kilograms/pounds)</h4>
 
-                <p class = "result-left-col"><span id = "metric-input-value">0</span> meters = 
-                    <span id = "imperial-result-value">0</span> feet</p>
+                <p class = "result-left-col"><span id = "kilos-input-value">0</span> kilos = 
+                    <span id = "pounds-result-value">0</span> pounds</p>
 
-                <p class = "result-right-col"><span id = "imperial-input-value">0</span> feet = 
-                    <span id = "metric-result-value">0</span> meters</p>
+                <p class = "result-right-col"><span id = "pounds-input-value">0</span> pounds = 
+                    <span id = "kilos-result-value">0</span> kilos</p>
             </div>
         </section>
         <script src = "index.js"></script>
