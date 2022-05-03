@@ -15,4 +15,6 @@ The design of the app was followed with the one provided in the course, with sli
 
 1. Project setup - html file structuring, create index.css and index.js.
 2. Styling - add the layout, manage white space, colors and typography.
-3. Create conversion featrue - added the feature, without any limits to number of characters in input. 
+3. Create conversion featrue - add the feature, without any limits to number of character.
+4. Refactor the conversion feature and data - restructure data as object arrays, linking to DOM 
+   elements through functions, more DRY code

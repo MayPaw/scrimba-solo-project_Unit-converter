@@ -1,65 +1,95 @@
-const input = document.getElementsByTagName("input")[0]
+const inputHtml = document.getElementsByTagName("input")[0]
 
-const elements = {
-  inputs: [document.getElementById("meters-input-value"),
-    document.getElementById("feet-input-value"),
-    document.getElementById("liters-input-value"),
-    document.getElementById("gallons-input-value"),
-    document.getElementById("kilos-input-value"),
-    document.getElementById("pounds-input-value")
-  ],
+
+/* Units array - data for conversion and DOM linking*/
+
+const units = [
+  {
+    measure: "length", 
+    unit: "meters", 
+    convertionRate: 0.305,
+  },
+
+  {
+    measure: "length", 
+    unit: "feet",
+    convertionRate: 3.28084,
+  },
   
-  results: {
-    meters: document.getElementById("meters-result-value"),
-    feet: document.getElementById("feet-result-value"),
-    liters: document.getElementById("liters-result-value"),
-    gallons: document.getElementById("gallons-result-value"),
-    kilos: document.getElementById("kilos-result-value"),
-    pounds: document.getElementById("pounds-result-value")
+  {
+    measure: "volume", 
+    unit: "liters", 
+    convertionRate: 0.2641722,
+  },
+
+  {
+    measure: "volume", 
+    unit: "gallons",
+    convertionRate: 3.785
+  },
+
+  {
+    measure: "mass",
+    unit: "kilos", 
+    convertionRate: 2.2,
+  },
+
+  {
+    measure: "mass",
+    unit: "pounds",
+    convertionRate: 0.45359237
+  }
+]
+
+
+/* Elements Array - array with links to DOM*/
+const elementsArray = generateElementsArray()
+
+
+/* generateElementArray - the function uses units array to map through 
+all measures and returns array with links to DOM */
+
+function generateElementsArray(){
+  return units.map(object => {
+      return {
+         measure: object.measure,
+         unit: object.unit,
+         input: document.getElementById(object.unit + "-input-value"),
+         result: document.getElementById(object.unit + "-result-value"),
+     }
+   })
+ }
+
+function updateElementsInputValue() {
+  elementsArray.forEach(element => element.input.textContent = inputHtml.value)
+}
+
+
+
+/* calcValue() interates through both data arrays to compare each measure 
+and unit property values, and then choose the right convertionRate*/
+
+function calcValue(){
+  for (const element of elementsArray) {
+    for (const object of units) {
+      const result = element.result
+      const input = element.input.textContent
+      if (element.measure === object.measure && 
+        element.unit === object.unit) {
+          result.textContent = (input * object.convertionRate).toFixed(3)
+        } 
+        else if (element.measure === object.measure && 
+          element.unit === object.imperial){
+            result.textContent = (input * object.convertionRate).toFixed(3)
+        }
+    }
   }
 }
 
-const values = {
-  meters: 0,
-  feet: 0,
-  liters: 0,
-  gallons: 0,
-  kilos: 0,
-  pounds: 0
+function handleEvent() {
+  updateElementsInputValue()
+  calcValue()
 }
 
 
-const conversionRate = {
-  metersToFeet: 3.28084,
-  feetToMeters: 0.305,
-  litersToGallons: 0.2641722,
-  gallonsToLiters: 3.785,
-  kilosToPounds: 2.2,
-  poundsToKilos: 0.45359237
-}
-
-
-
-
-
-input.addEventListener("keyup", handleEvent)
-
-
-function ShowInputValues() {
-  elements.inputs.forEach(element => element.textContent = input.value)
- }
-
- function convertValues (unitConversionRateKey, desiredUnit ) {
-    const result = input.value * conversionRate[unitConversionRateKey]
-    elements.results[desiredUnit].textContent = result.toFixed(2)
-   }
-
-function handleEvent (){
-  ShowInputValues()
-  convertValues("metersToFeet", "feet")
-  convertValues("feetToMeters", "meters")
-  convertValues("litersToGallons", "gallons")
-  convertValues("gallonsToLiters", "liters")
-  convertValues("kilosToPounds", "pounds")
-  convertValues("poundsToKilos", "kilos")
-}
+inputHtml.addEventListener("keyup", handleEvent)
