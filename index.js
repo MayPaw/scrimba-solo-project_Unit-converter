@@ -42,8 +42,10 @@ const units = [
 ]
 
 
-/* Elements Array - array with links to DOM*/
+// App setup
 const elementsArray = generateElementsArray()
+updateElementsInputValue()
+
 
 
 /* generateElementArray - the function uses units array to map through 
@@ -87,9 +89,37 @@ function calcValue(){
 }
 
 function handleEvent() {
+  preventValue()
   updateElementsInputValue()
   calcValue()
 }
 
 
-inputHtml.addEventListener("keyup", handleEvent)
+inputHtml.addEventListener("input", handleEvent)
+
+inputHtml.addEventListener("keydown", (event) => {
+  if(event.key === "Enter") {
+    event.preventDefault()
+  }
+})
+
+/* Utils functions*/
+
+// preventing from typing too large or too small number in the input field
+
+function preventValue(){
+    if (parseInt(input.value,10) > 100000) {
+      input.value = 100000
+    } 
+      else if (input.value.charAt(0)==="0") {
+        const newValue = input.value.replace("0","")
+        input.value = newValue
+      }
+      else if (input.value === ""){
+        input.value = 0
+      }
+      else if (input.value.includes("-")){
+        const newValue = input.value.replace("-","")
+        input.value = newValue
+      }
+}
