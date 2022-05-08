@@ -1,8 +1,6 @@
 /* Page layout*/
 
 header {
-    min-height: 40%;
-    max-height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +9,7 @@ header {
 
 .result {
     display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr;
+    grid-template: repeat(2, auto) / repeat(2, 1fr);
     
 }
 
@@ -40,13 +38,16 @@ header {
     margin: 0;
 }
 
+
 body {
     text-align: center;
     background-color: #1f1f1f;
+    height: 100vh;
 }
 
 header {
     background-color: #892be2a5;
+    padding: 2em;
 }
 
 h1 {
@@ -73,7 +74,8 @@ input::-webkit-inner-spin-button {
 }
 
 .result {
-    margin: 3em;
+    width: 100%;
+    margin: 3em auto;
 }
 
 .result-heading {
@@ -84,16 +86,17 @@ input::-webkit-inner-spin-button {
     justify-self: end;
     align-self: center;
     border-right: 1px solid #ffffffee;
+    padding-right: 1em;
 }
 
 .result-right-col {
     justify-self: start;
     align-self: center;
+    padding-left: 1em;
 }
 
 p {
     line-height: 1.5em;
-    padding: 0 1em;
 }
 
 
@@ -132,3 +135,70 @@ span {
     font-size: 0.9rem;
     font-weight: 600;
 }
+
+/* media queries */
+
+@media screen and (max-width: 500px) {
+
+    .result-heading {
+        margin-bottom: 1em;
+    }
+
+    .result {
+        margin: 2em 0;
+    }
+
+    h1 {
+        font-size: 0.9rem;
+    }
+    
+    input {
+        font-size: 4rem;
+    }
+    
+    .result-heading {
+        font-size: 0.6rem;
+    }
+    
+    p {
+        font-size: 0.7rem;
+    }
+    
+    span {
+        font-size: 0.8rem;
+    }
+} 
+
+@media screen and (max-width: 300px) {
+
+    .results-container {
+        padding: 0 1rem;
+    }
+    .result-heading {
+        margin-bottom: 1em;
+    }
+
+    .result {
+        margin: 2em 0;
+    }
+
+    h1 {
+        font-size: 0.8rem;
+    }
+    
+    input {
+        font-size: 3rem;
+    }
+    
+    .result-heading {
+        font-size: 0.6rem;
+    }
+    
+    p {
+        font-size: 0.6rem;
+    }
+    
+    span {
+        font-size: 0.65rem;
+    }
+} 

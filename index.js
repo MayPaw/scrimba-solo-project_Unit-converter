@@ -63,7 +63,7 @@ function generateElementsArray(){
  }
 
 function updateElementsInputValue() {
-  elementsArray.forEach(element => element.input.textContent = inputHtml.value)
+  elementsArray.forEach(element => element.input.textContent = (inputHtml.value*1).toFixed(3))
 }
 
 
