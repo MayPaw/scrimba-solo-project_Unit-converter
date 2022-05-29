@@ -8,6 +8,8 @@ volume and mass units between metric and imperial system.
 The design of the app was followed with the one provided in the course, with slight changes 
 like colors and typography.
 
+To see the project please visit: https://maypaw.github.io/scrimba-solo-project_Unit-converter/
+
 ## Requirements for the task
 
 * The app should include an input for user to change the converted number and automatically 
